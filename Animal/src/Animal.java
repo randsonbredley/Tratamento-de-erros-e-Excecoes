@@ -4,15 +4,22 @@ public class Animal {
 	private String picture;
 	private String food;
 	private int hunger;
+	private int energia; //Exercicio de fixação
 	private String bounderies;
 	private String location;
 	
-	public Animal(int hunger) {
+	public Animal(int hunger , int energia) {
 		this.hunger = hunger;
+		this.energia = energia; //Exercicio de Fixação
 	}
 	
 	public int getHunger() {
 		return this.hunger;
+	}
+	
+	//Exercicio de Fixação
+	public int getEnergia() {
+		return this.energia;
 	}
 		
 	public void makeNoise() {

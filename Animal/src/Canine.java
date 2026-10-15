@@ -1,9 +1,6 @@
 
 public class Canine extends Animal {
-	@Override
-	public void roam() {
-		// TODO Auto-generated method stub
-		//super.roam();
-		System.out.println("Andando fazendo barulho!");
+	public Canine(int hunger, int energia) {
+		super(hunger, energia);
 	}
 }
