@@ -1,41 +1,28 @@
 
 public class Main {
 	public static void main(String[] args) {
-		Animal Leao = new Leao();
-		Animal Tigre = new Tigre();
-		Animal Gato = new Gato();
-		Animal Lobo = new Lobo();
-		Animal Dog = new Dog();
-		Animal Hippo = new Hippo();
 		
-		Leao.makeNoise();
-		Leao.eat();
-		Leao.sleep();
-		Leao.roam();
+		//Polimorfismo: Array do tipo superclasse guardando subclasses
 		
-		Tigre.makeNoise();
-		Tigre.eat();
-		Tigre.sleep();
-		Tigre.roam();
+		Animal[] animais = new Animal[3];
+		animais[0] = new Animal(5); //Pouca fome
+		animais[1] = new Animal(15); //Muita fome (Vai dar erro!)
+		animais[2] = new Animal(12); //Muita fome (Vai dar erro!)
 		
-		Gato.makeNoise();
-		Gato.eat();
-		Gato.sleep();
-		Gato.roam();
+		for(Animal animal:  animais) {
+			try {
+				//Tentamos fazer o animal vagar
+				animal.roam();
+			}catch(AnimalException a) {
+				//Polimorfismo em ação!
+				//A referência 'a' é do tipo AnimalException, mas captura o objeto HungryAnimal Exception
+				System.out.println("ERRO CAPTURADO: " + a.getMessage());
+				//Tratando o problema
+				System.out.println("Alimentando o animal...");
+				animal.eat();
+			}
+		}
 		
-		Lobo.makeNoise();
-		Lobo.eat();
-		Lobo.sleep();
-		Lobo.roam();
 		
-		Dog.makeNoise();
-		Dog.eat();
-		Dog.sleep();
-		Dog.roam();
-		
-		Hippo.makeNoise();
-		Hippo.eat();
-		Hippo.sleep();
-		Hippo.roam();
 	}
 }

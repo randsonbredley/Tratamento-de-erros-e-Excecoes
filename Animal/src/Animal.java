@@ -3,7 +3,7 @@ public class Animal {
 	
 	private String picture;
 	private String food;
-	private String hunger;
+	private int hunger;
 	private String bounderies;
 	private String location;
 	
